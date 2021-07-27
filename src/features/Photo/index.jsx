@@ -8,13 +8,16 @@ Photo.propTypes = {};
 
 function Photo(props) {
   const { url } = useRouteMatch();
+  console.log(url);
+  console.log("useRouteMatch()", useRouteMatch());
   return (
     <Switch>
       <Route exact path={url} component={MainPage} />
 
-      <Route path={`${url}/add`} component={AddEditPage} />
+      <Route path={`${url}/app`} component={AddEditPage} />
 
       <Route path={`${url}/:photoId`} component={AddEditPage} />
+
       <Route component={NotFound} />
     </Switch>
   );
